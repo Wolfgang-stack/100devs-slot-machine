@@ -150,34 +150,42 @@ function animateMate() {
 
 //change the bet amount
 function modifyBetAmount(e) {
+  //plus 1 to betAmount
   if (e.target === betAdd) {
+    //if you have enough monies
     if (Number(betAmount.innerText) + 1 <= Number(currentCash.innerText)) {
       betAmount.innerText = Number(betAmount.innerText) + 1;
     } else {
       alert("you do not have enough monies");
     }
+    //minus 1 from monies
   } else if (e.target === betSub) {
-    if (Number(betAmount.innerText) > 0) {
+    //if betAmount is more than 1
+    if (Number(betAmount.innerText) > 1) {
       betAmount.innerText = Number(betAmount.innerText) - 1;
     }
+    //+5
   } else if (e.target === addFive) {
     if (Number(betAmount.innerText) + 5 <= Number(currentCash.innerText)) {
       betAmount.innerText = Number(betAmount.innerText) + 5;
     } else {
       alert("you do not have enough monies");
     }
+    //+10
   } else if (e.target === addTen) {
     if (Number(betAmount.innerText) + 10 <= Number(currentCash.innerText)) {
       betAmount.innerText = Number(betAmount.innerText) + 10;
     } else {
       alert("you do not have enough monies");
     }
+    //+100
   } else if (e.target === addHund) {
     if (Number(betAmount.innerText) + 100 <= Number(currentCash.innerText)) {
       betAmount.innerText = Number(betAmount.innerText) + 100;
     } else {
       alert("you do not have enough monies");
     }
+    //go all in
   } else if (e.target === allIn) {
     betAmount.innerText = Number(currentCash.innerText);
   }
@@ -243,6 +251,8 @@ const screenJackFrames = [
   { boxShadow: "0 0 10px 10px rgb(255, 255, 0)" },
   { boxShadow: "0 0 0 0 black" },
 ];
+
+//box shad and text color/shadow
 const jackFrames = [
   {
     border: "8px ridge rgb(255, 255, 0)",
